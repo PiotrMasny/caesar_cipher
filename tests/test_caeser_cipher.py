@@ -108,9 +108,6 @@ def test_decrypt_polish_signs_sentence_with_positive_key(
     assert actual_result == expected_result
 
 
-# dodac test dla pojedynczej litery z -> a oraz a -> z
-
-
 @pytest.mark.parametrize(
     "text_to_encrypt, key, encrypted_text", [("z", 1, "a"), ("zzz", 1, "aaa")]
 )
@@ -132,5 +129,25 @@ def test_decrypt_letter_a_with_positive_key(text_to_decrypt, key, decrypted_text
     assert actual_result == expected_result
 
 
-# dodac test dla psutego słowa
+@pytest.mark.parametrize(
+    "text_to_encrypt, key, encrypted_text", [("", 2, ""), ("   ", 5, "   ")]
+)
+def test_encrypt_empty_sentence_with_positive_key(text_to_encrypt, key, encrypted_text):
+    cipher = CaesarCipher(list(ascii_lowercase))
+    actual_result = cipher.encrypt(text_to_encrypt, key)
+    expected_result = encrypted_text
+    assert actual_result == expected_result
+
+
+@pytest.mark.parametrize(
+    "text_to_decrypt, key, decrypted_text",
+    [("", 2, ""), (" ", 5, " ")],
+)
+def test_decrypt_empty_sentence_with_positive_key(text_to_decrypt, key, decrypted_text):
+    cipher = CaesarCipher(list(ascii_lowercase))
+    actual_result = cipher.decrypt(text_to_decrypt, key)
+    expected_result = decrypted_text
+    assert actual_result == expected_result
+
+
 # dodac test dla key=0
