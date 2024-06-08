@@ -12,7 +12,7 @@ from src.ciphers.caeser import CaesarCipher
 def test_encrypt_lowercase_sentence_with_positive_key(
     text_to_encrypt, key, encrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -25,7 +25,7 @@ def test_encrypt_lowercase_sentence_with_positive_key(
 def test_decrypt_lowercase_sentence_with_positive_key(
     text_to_decrypt, key, decrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result
@@ -38,7 +38,7 @@ def test_decrypt_lowercase_sentence_with_positive_key(
 def test_encrypt_uppercase_sentence_with_positive_key(
     text_to_encrypt, key, encrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -51,7 +51,7 @@ def test_encrypt_uppercase_sentence_with_positive_key(
 def test_decrypt_uppercase_sentence_with_positive_key(
     text_to_decrypt, key, decrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result
@@ -64,7 +64,7 @@ def test_decrypt_uppercase_sentence_with_positive_key(
 def test_encrypt_special_signs_sentence_with_positive_key(
     text_to_encrypt, key, encrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -77,7 +77,7 @@ def test_encrypt_special_signs_sentence_with_positive_key(
 def test_decrypt_special_signs_sentence_with_positive_key(
     text_to_decrypt, key, decrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result
@@ -89,7 +89,7 @@ def test_decrypt_special_signs_sentence_with_positive_key(
 def test_encrypt_polish_signs_sentence_with_positive_key(
     text_to_encrypt, key, encrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -102,7 +102,7 @@ def test_encrypt_polish_signs_sentence_with_positive_key(
 def test_decrypt_polish_signs_sentence_with_positive_key(
     text_to_decrypt, key, decrypted_text
 ):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result
@@ -112,7 +112,7 @@ def test_decrypt_polish_signs_sentence_with_positive_key(
     "text_to_encrypt, key, encrypted_text", [("z", 1, "a"), ("zzz", 1, "aaa")]
 )
 def test_encrypt_letter_z_with_positive_key(text_to_encrypt, key, encrypted_text):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -123,7 +123,7 @@ def test_encrypt_letter_z_with_positive_key(text_to_encrypt, key, encrypted_text
     [("a", 1, "z"), ("aaa", 1, "zzz")],
 )
 def test_decrypt_letter_a_with_positive_key(text_to_decrypt, key, decrypted_text):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result
@@ -133,7 +133,7 @@ def test_decrypt_letter_a_with_positive_key(text_to_decrypt, key, decrypted_text
     "text_to_encrypt, key, encrypted_text", [("", 2, ""), ("   ", 5, "   ")]
 )
 def test_encrypt_empty_sentence_with_positive_key(text_to_encrypt, key, encrypted_text):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -144,7 +144,7 @@ def test_encrypt_empty_sentence_with_positive_key(text_to_encrypt, key, encrypte
     [("", 2, ""), (" ", 5, " ")],
 )
 def test_decrypt_empty_sentence_with_positive_key(text_to_decrypt, key, decrypted_text):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result
@@ -155,7 +155,7 @@ def test_decrypt_empty_sentence_with_positive_key(text_to_decrypt, key, decrypte
     [("impasse", 0, "impasse"), ("gambit", 0, "gambit")],
 )
 def test_encrypt_sentence_with_key_equals_zero(text_to_encrypt, key, encrypted_text):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.encrypt(text_to_encrypt, key)
     expected_result = encrypted_text
     assert actual_result == expected_result
@@ -166,7 +166,7 @@ def test_encrypt_sentence_with_key_equals_zero(text_to_encrypt, key, encrypted_t
     [("fianchetto", 0, "fianchetto"), ("en passant", 0, "en passant")],
 )
 def test_decrypt_sentence_with_key_equals_zero(text_to_decrypt, key, decrypted_text):
-    cipher = CaesarCipher(list(ascii_lowercase))
+    cipher = CaesarCipher(ascii_lowercase)
     actual_result = cipher.decrypt(text_to_decrypt, key)
     expected_result = decrypted_text
     assert actual_result == expected_result

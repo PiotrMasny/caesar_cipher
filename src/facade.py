@@ -21,7 +21,7 @@ class Facade:
         self.__is_running = True
         self.__is_saved = True
         self.memory = []
-        self.cipher = CaesarCipher(list(alphabet))
+        self.cipher = CaesarCipher(alphabet)
         self.files = FileManager()
 
     def loop(self):
