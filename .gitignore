@@ -1,3 +1,7 @@
 .idea/
 README.MD
 src/history.json
+src/__pycache__/
+src/ciphers/__pycache__/
+src/utils/__pycache__/
+tests/__pycache__/
