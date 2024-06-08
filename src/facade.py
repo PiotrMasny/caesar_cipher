@@ -82,7 +82,7 @@ class Facade:
             self.show_error()
 
     @staticmethod
-    def key_validation(key):
+    def key_validation(key: int):
         if key < 0:
             raise ValueError
 
